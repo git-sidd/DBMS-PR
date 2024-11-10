@@ -1,3 +1,51 @@
+-- Creating Customer Table
+CREATE TABLE Customer (
+    C_Id INT PRIMARY KEY,
+    Cname VARCHAR(50),
+    City VARCHAR(50)
+);
+
+INSERT INTO Customer (C_Id, Cname, City) VALUES
+(1, 'John', 'Nashik'),
+(2, 'Seema', 'Aurangabad'),
+(3, 'Amita', 'Nagar'),
+(4, 'Rakesh', 'Pune'),
+(5, 'Samata', 'Nashik'),
+(6, 'Ankita', 'Chandwad'),
+(7, 'Bhavika', 'Pune'),
+(8, 'Deepa', 'Mumbai'),
+(9, 'Nitin', 'Nagpur'),
+(10, 'Pooja', 'Pune');
+
+-- Creating Account Table
+CREATE TABLE Account (
+    C_Id INT,
+    Acc_Type VARCHAR(20),
+    Amount INT,
+    FOREIGN KEY (C_Id) REFERENCES Customer(C_Id)
+);
+
+INSERT INTO Account (C_Id, Acc_Type, Amount) VALUES
+(1, 'Current', 5000),
+(2, 'Saving', 20000),
+(3, 'Saving', 70000),
+(4, 'Saving', 50000),
+(6, 'Current', 35000),
+(7, 'Loan', 30000),
+(8, 'Saving', 50000),
+(9, 'Saving', 90000),
+(10, 'Loan', 8000),
+(11, 'Current', 45000);
+
+
+
+
+
+
+
+
+
+
 Here are the MySQL queries based on the provided table structure:
 
 ### 1. Show the `cname`, `Acc_Type`, and `Amount` of customers who have a saving account:

@@ -1,3 +1,62 @@
+-- Creating student table
+CREATE TABLE student (
+    S_ID INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_name VARCHAR(50),
+    tot_cred INT
+);
+INSERT INTO student (S_ID, name, dept_name, tot_cred) VALUES
+(1, 'Aman', 'Computer', 30),
+(2, 'Amit', 'Mechanical', 28),
+(3, 'Amol', 'Electronics', 24),
+(4, 'Samira', 'Computer', 35),
+(5, 'Samar', 'Civil', 20),
+(6, 'Deepam', 'Computer', 40),
+(7, 'Raman', 'Mechanical', 32),
+(8, 'Shriram', 'Computer', 38),
+(9, 'Hemant', 'Electrical', 42),
+(10, 'Pramod', 'Computer', 22);
+
+
+-- Creating instructor table
+CREATE TABLE instructor (
+    T_ID INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_name VARCHAR(50),
+    salary INT
+);
+INSERT INTO instructor (T_ID, name, dept_name, salary) VALUES
+(1, 'Dr. Sharma', 'Computer', 50000),
+(2, 'Prof. Amol', 'Mechanical', 42000),
+(3, 'Dr. Seema', 'Electronics', 60000),
+(4, 'Prof. Nitin', 'Computer', 48000),
+(5, 'Dr. Deepak', 'Civil', 39000),
+(6, 'Prof. Shalini', 'Electrical', 45000),
+(7, 'Dr. Amit', 'Mechanical', 41000),
+(8, 'Prof. John', 'Computer', 55000),
+(9, 'Dr. Preeti', 'Computer', 53000),
+(10, 'Prof. Ravi', 'Civil', 47000);
+
+-- Creating course table
+CREATE TABLE course (
+    course_id INT PRIMARY KEY,
+    title VARCHAR(100),
+    dept_name VARCHAR(50),
+    credits INT
+);
+INSERT INTO course (course_id, title, dept_name, credits) VALUES
+(101, 'DBMS', 'Computer', 4),
+(102, 'Data Structures', 'Computer', 3),
+(103, 'Thermodynamics', 'Mechanical', 4),
+(104, 'Digital Electronics', 'Electronics', 3),
+(105, 'Civil Engineering Basics', 'Civil', 2),
+(106, 'Power Systems', 'Electrical', 3),
+(107, 'Algorithms', 'Computer', 3),
+(108, 'Fluid Mechanics', 'Mechanical', 4),
+(109, 'VLSI Design', 'Electronics', 4);
+
+
+
 Here are the SQL queries to perform the specified tasks on your MySQL database terminal based on the given table structures:
 
 ### Table Structures:

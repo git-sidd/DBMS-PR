@@ -1,3 +1,60 @@
+-- Creating student table
+CREATE TABLE student (
+    S_ID INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_name VARCHAR(50),
+    tot_cred INT
+);
+INSERT INTO student (S_ID, name, dept_name, tot_cred) VALUES
+(1, 'Aman', 'Computer', 30),
+(2, 'Anjali', 'Mechanical', 28),
+(3, 'Deepak', 'Electronics', 24),
+(4, 'Samira', 'Computer', 35),
+(5, 'Rahul', NULL, 20),
+(6, 'Pooja', 'Civil', 40);
+
+-- Creating instructor table
+CREATE TABLE instructor (
+    T_ID INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_name VARCHAR(50),
+    salary INT
+);
+INSERT INTO instructor (T_ID, name, dept_name, salary) VALUES
+(1, 'Dr. Sharma', 'Computer', 50000),
+(2, 'Prof. Amol', 'Mechanical', 42000),
+(3, 'Dr. Seema', 'Electronics', 60000),
+(4, 'Prof. Nitin', 'Computer', 48000);
+
+-- Creating course table
+CREATE TABLE course (
+    course_id INT PRIMARY KEY,
+    title VARCHAR(100),
+    dept_name VARCHAR(50),
+    credits INT
+);
+INSERT INTO course (course_id, title, dept_name, credits) VALUES
+(101, 'DBMS', 'Computer', 4),
+(102, 'Data Structures', 'Computer', 3),
+(103, 'Thermodynamics', 'Mechanical', 4),
+(104, 'Digital Electronics', 'Electronics', 3);
+
+-- Creating teaches table
+CREATE TABLE teaches (
+    T_ID INT,
+    course_id INT,
+    sec_id INT,
+    semester VARCHAR(10),
+    year INT,
+    FOREIGN KEY (T_ID) REFERENCES instructor(T_ID),
+    FOREIGN KEY (course_id) REFERENCES course(course_id)
+);
+INSERT INTO teaches (T_ID, course_id, sec_id, semester, year) VALUES
+(1, 101, 1, 'Spring', 2024),
+(2, 103, 2, 'Fall', 2024),
+(3, 104, 3, 'Spring', 2024),
+(4, 102, 1, 'Fall', 2023);
+
 Here are the SQL queries to perform the specified tasks on your MySQL database terminal based on the given table structures:
 
 ### Table Structures:
